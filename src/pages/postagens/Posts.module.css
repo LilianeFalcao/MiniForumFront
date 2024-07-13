@@ -1,0 +1,49 @@
+.FormPost{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 16px;
+    padding: 5px;
+    gap: 20px;
+}
+
+.inputStyle{
+    background-color: #EDEDED;
+    border-radius: 20px;
+    border: none;
+    width: 363px;
+    height: 150px;
+    padding: 15px;
+}
+
+.titleText{
+    background-color: #EDEDED;
+    border-radius: 20px;
+    border: none;
+    width: 363px;
+    height: 60px;
+    padding: 5px;
+}
+
+.PostButton{
+    width: 300px;
+    height: 45px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    border-radius: 15px;
+    border: none;
+    background: linear-gradient(45deg, blue, purple);
+
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.Cards{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

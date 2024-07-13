@@ -1,0 +1,21 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.buttonLogOutLogin{
+    color: white;
+    font-size: 20px;
+    padding: 10px 20px;
+    width: 200px;
+    cursor: pointer;
+    margin: 15px;
+    border: 3px solid;
+    border-image: linear-gradient(45deg, blue, purple) 1;
+    background: transparent;
+
+    &:hover{
+        box-shadow: 15px 15px 35px rgb(8, 4, 241);
+    }
+}
