@@ -5,13 +5,19 @@ import DeslikeIcon from "../../asset/deslike.png";
 import styles from "./Card.module.css";
 import axios from 'axios';
 import { BaseUrl } from '../../constants/BaseUrl';
+import { goToComentarios } from '../../router/cordinator';
+import { useNavigate } from 'react-router-dom';
 
 const Card = ({ postId, title, content, UserName}) => {
+    const navigate = useNavigate()
     const [likeActive, setLikeActive] = useState(false);
     const [deslikeActive, setDeslikeActive] = useState(false);
     const [likeCount, setLikeCount] = useState(0);
     const [deslikeCount, setDeslikeCount] = useState(0);
 
+    const Comentario = () => {
+        goToComentarios(navigate)
+    }
     useEffect(() => {
         // Buscar contagem de likes e deslikes do servidor ou localStorage
         const fetchPostData = async () => {
@@ -144,7 +150,7 @@ const Card = ({ postId, title, content, UserName}) => {
                     <button onClick={() => handleAction('deslike')}>
                         <img src={DeslikeIcon} alt="deslikeIcon" /> {deslikeCount}
                     </button>
-                    <button>
+                    <button onClick={Comentario}>
                         <img src={Comentarios} alt="comments" />
                     </button>
                 </div>

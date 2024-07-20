@@ -110,7 +110,7 @@ const Posts = () => {
   }, [handleCarregaPostagem]);
 
   return (
-    <>
+    <div className={styles.background}>
       <div>
         <LoginLogout />
         <ToastContainer />
@@ -138,6 +138,7 @@ const Posts = () => {
             > Postar </button>
         </form>
       </div>
+      <div className={styles.LinhaSeparacao}></div>
       <div className={styles.Cards}>
         {/*dando get dos posts */}
         {loading && <p style={{color:`white`}}>Carregando dados...</p>}
@@ -156,8 +157,8 @@ const Posts = () => {
             />;
         })}
       </div>
-    </>
-  )
+    </div>
+  );
 }
 
 export default Posts
