@@ -13,7 +13,7 @@
     margin: 15px;
     border: 3px solid;
     border-image: linear-gradient(45deg, blue, purple) 1;
-    background: transparent;
+    background-color: #1f1f1f;
 
     &:hover{
         box-shadow: 15px 15px 35px rgb(8, 4, 241);

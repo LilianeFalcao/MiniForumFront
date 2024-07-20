@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import Card from '../../components/cards/Card'
 import LoginLogout from '../../components/loginLogOutbutton/LoginLogout'
 import useForm from '../../hooks/useForm'
@@ -11,7 +11,7 @@ import { useFetch } from '../../hooks/useFetch'
 
 const Posts = () => {
   const UrlPost = `${BaseUrl}/posts`
-  const {dados: postagens, loading , error} = useFetch(UrlPost);
+  const {loading , error} = useFetch(UrlPost);
 
   //pegando dados dos inputs
   const { form, onChangeInputs, clearInputs} = useForm({
@@ -19,7 +19,8 @@ const Posts = () => {
     content: ""
   })
   
-  //const [ posts, setPosts] = useState()
+  const [posts, setPosts] = useState([])
+  //const [userId, setUserId] = useState("");
 
   const notify = () => {
     toast.success("Postado!")
@@ -70,6 +71,7 @@ const Posts = () => {
       if(response){
         notify()
       }
+      handleCarregaPostagem()
     } catch (error) {
       console.log(error);
       if (error.response) {
@@ -80,6 +82,32 @@ const Posts = () => {
     clearInputs()
   }
 
+
+  const handleCarregaPostagem = useCallback(async () => {
+    try {
+      const token = localStorage.getItem("token");
+      const response = await axios.get(UrlPost, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+      setPosts(response.data);
+    } catch (error) {
+      console.log("Error", error.response);
+    }
+  }, [UrlPost]);
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      try {
+        
+      } catch (error) {
+        console.log("Erro ao decodificar o token:", error);
+      }
+    }
+    handleCarregaPostagem();
+  }, [handleCarregaPostagem]);
 
   return (
     <>
@@ -114,17 +142,17 @@ const Posts = () => {
         {/*dando get dos posts */}
         {loading && <p style={{color:`white`}}>Carregando dados...</p>}
         {error && <p>{error}</p>}
-        {postagens && postagens.map((post) => {
+        {posts && posts.map((post) => {
           const token = localStorage.getItem("token");
           const decodedToken = jwtDecode(token);
-          const User_id = decodedToken.id;
+          const UserName = decodedToken.id;
           return <Card 
+            postId = {post.id} 
             key={post.id} 
             title={post.title} 
             content={post.content} 
-            User_id={User_id}
-            Like={post.likes_count}
-            Deslike={post.dislikes_count}
+            UserName={UserName}
+            loading={loading}
             />;
         })}
       </div>
