@@ -3,13 +3,13 @@ export const goToCadastro = (navigate) =>{
 }
 
 export const goToLogin = (navigate) =>{
-    navigate("/login");
+    navigate("/");
 }
 
 export const goToFeed = (navigate) =>{
     navigate("/posts");
 }
 
-export const goToComentarios = (navigate) =>{
-    navigate("/comentarios");
+export const goToComentarios = (navigate, postId) =>{
+    navigate(`/posts/${postId}/comentarios`);
 }

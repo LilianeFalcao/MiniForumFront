@@ -15,9 +15,6 @@ const Card = ({ postId, title, content, UserName}) => {
     const [likeCount, setLikeCount] = useState(0);
     const [deslikeCount, setDeslikeCount] = useState(0);
 
-    const Comentario = () => {
-        goToComentarios(navigate)
-    }
     useEffect(() => {
         // Buscar contagem de likes e deslikes do servidor ou localStorage
         const fetchPostData = async () => {
@@ -29,7 +26,7 @@ const Card = ({ postId, title, content, UserName}) => {
                     setLikeCount(parseInt(storedLikeCount));
                     setDeslikeCount(parseInt(storedDeslikeCount));
                 } else {
-                    const response = await axios.get(`${BaseUrl}/posts/${postId}`);
+                    const response = await axios.get(`${BaseUrl}/posts/${postId}/likes`);
                     const { numeroLikes, numeroDeslikes } = response.data;
                     setLikeCount(numeroLikes);
                     setDeslikeCount(numeroDeslikes);
@@ -150,7 +147,7 @@ const Card = ({ postId, title, content, UserName}) => {
                     <button onClick={() => handleAction('deslike')}>
                         <img src={DeslikeIcon} alt="deslikeIcon" /> {deslikeCount}
                     </button>
-                    <button onClick={Comentario}>
+                    <button onClick={()=> {goToComentarios(navigate, postId)}}>
                         <img src={Comentarios} alt="comments" />
                     </button>
                 </div>
