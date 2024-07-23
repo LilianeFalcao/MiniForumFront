@@ -106,11 +106,13 @@ const Comentario = () => {
                 {comments.map(comment => (
                     <div key={comment.id} className={styles.container}>
                         <li styles={{}}>
-                            <p className={styles.userId}><strong>{comment.user_id}</strong></p>
+                            <p className={styles.userId}>Enviado por: <strong>{comment.user_id}</strong></p>
                             <h1 className={styles.conteudo}>{comment.content}</h1>
                         </li>
                     </div>
+                    
                 ))}
+            <div className={styles.LinhaSeparacao}></div>
             </div>
         </div>
     )

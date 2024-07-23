@@ -1,24 +1,16 @@
-.background {
-    background-image: url('../../asset/fundoNew.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 100vw;
-    height: 100vh;
+.background{
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
-}
-.CadastroBack{
-    background-color: rgba(0, 0, 0, 0.822);
-    border-radius: 20px;
-    padding: 30px;
+    align-items: center;
+    margin: 25px
 }
 .DivLogout{
     display: flex;
     flex-direction: row;
-    justify-content:center;
+    justify-content:flex-end;
     background-color: #3a3d52;
+    margin-top: 250px;
 }
 
 .FormCadastro{
@@ -31,20 +23,20 @@
 
 .InputsStyles{
     padding: 15px;
-    background: transparent;
-    border: 1px solid #acacac;
+    background: #3D404A;
+    border:none;
     border-radius: 15px;
     font-size: 20px;
     color: white;
     margin:20px; 
-
+    width: 448px;
     ::placeholder {
-        color: #999;
+        color: #d4d4d4;
     }
 }
 .textos{
     color: #acacac;
-    font-size: 1.3em
+    font-size: 1.8em
 }
 
 .ButtonLogin {

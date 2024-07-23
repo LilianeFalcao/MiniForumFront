@@ -152,6 +152,7 @@ const Card = ({ postId, title, content, UserName}) => {
                     </button>
                 </div>
             </div>
+        <div className={styles.LinhaSeparacao}></div>
         </div>
     );
 };

@@ -82,10 +82,9 @@ const Login = () => {
               pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$*&@#])[0-9a-zA-Z$*&@#]{8,}$"
             title="A senha deve conter pelo menos 8 caracteres, incluindo pelo menos um dígito, uma letra minúscula, uma letra maiúscula e um caractere especial ($, *, &, @ ou #)"/>
           </label>
-          <button className={styles.ButtonLogin}>Login</button>
           <div className={styles.divButtons}> 
-            <p className={styles.textos}> Não tem conta? </p>
-            <button className={styles.ButtonCadastro} onClick={IrCadastro}> Crie uma! </button>
+            <button className={styles.ButtonLogin}>Login</button>
+            <button className={styles.ButtonCadastro} onClick={IrCadastro}> Crie uma conta! </button>
           </div>
         </form>
       </div>

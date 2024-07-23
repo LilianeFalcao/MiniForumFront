@@ -37,10 +37,13 @@ const Cadastro = () => {
   }
 
   return (
+    <div>
     <div className={styles.background}>
-    <div className={styles.CadastroBack}>
       <LoginLogout  className={styles.logOut}/>
-      <p className={styles.textos} >Seja Bem-vindo!! </p >
+      <div className={styles.textos} >
+      <p> Seja Bem-vindo!!</p >
+      <p> Crie uma conta </p >
+      </div>
       <form className={styles.FormCadastro}  onSubmit={handleCadastro} >
         <label>
           <input className={styles.InputsStyles}

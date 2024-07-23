@@ -10,14 +10,16 @@
 }
 
 .titleText{
-    background-color: #EDEDED;
+    background-color: #3a3d52;
     border-radius: 20px;
     border: none;
-    width: 363px;
+    width: 448px;
     height: 150px;
     padding: 15px;
+    caret-color: #e0e0e0;
+    
     ::placeholder{
-        color: #575757;
+        color: #c7c7c7;
     }
 }
 
@@ -56,7 +58,7 @@
     padding: 2px;
     margin-top: 10px;
     border-radius: 30px;
-    background-color: #EDEDED;
+    background-color: #1C1C21;
     margin: 25px;
 }
 
@@ -79,7 +81,7 @@
 
 .userId{
     font-size: 15px;
-    color: #464646;
+    color: #dddddd;
 }
 
 .conteudo{
